@@ -458,6 +458,25 @@ WHERE SERVICE_.DATE >= DATEADD(day, -7, GETDATE());
 purchased a plane in the past month. */
 
 
+SELECT DISTINCT
+  CASE
+    WHEN OWNER_TYPE = 'Person' THEN PERSON.NAME_
+    WHEN OWNER_TYPE = 'Corp' THEN CORP_NAME
+  END AS OwnerName,
+  CASE
+    WHEN OWNER_TYPE = 'Person' THEN PERSON.PHONE_NO
+    WHEN OWNER_TYPE = 'Corp' THEN CORPORATION.PHONE_NUM
+  END AS PhoneNum
+FROM OWNER_ 
+INNER JOIN (
+  SELECT REG
+  FROM OWNS
+  WHERE P_DATE >=  DATEADD(month, -1, GETDATE())
+) p ON REG = p.REG
+LEFT JOIN PERSON  ON OWNER_ID = SSN AND OWNER_TYPE = 'Person'
+LEFT JOIN CORPORATION ON OWNER_ID = CORPORATION.CORP_ID AND OWNER_TYPE = 'Corp';
+
+
 
 -------------------------------------------------------------------------------------------------------------------------------------
 --QUERY 9:
@@ -526,8 +545,6 @@ JOIN CORPORATION c ON C.CORP_ID = o.OWNER_ID
 WHERE wo.MODEL_NO <> pt.MODEL_NO
 
 
-
---no result
 ------------------------------------------------------------------------------------------------------------------------------
 --QUERY 14
 /*Write a SQL query to find the names and phone numbers of owners who have
@@ -627,7 +644,7 @@ WHERE o2.P_DATE >= DATEADD(month, -1, GETDATE())
       WHERE a1.OF_TYPE = a.OF_TYPE
   );
 
-  --no result
+  
 --------------------------------------------------------------------------------------------------------------------
 --QUERY 19
 /*Write a Query to find the total number of planes stored in each hangar.*/
