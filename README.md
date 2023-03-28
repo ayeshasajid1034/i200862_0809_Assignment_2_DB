@@ -1,4 +1,11 @@
 # i200862_0809_Assignment_2_DB
+#ERD
+
+
+
+
+
+
 #Queries_Output
 
 ![Query4](https://user-images.githubusercontent.com/113238110/228276738-e54d0625-334e-48cd-acec-cfbb41f88cf5.png)
