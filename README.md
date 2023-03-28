@@ -1,9 +1,7 @@
 # i200862_0809_Assignment_2_DB
 #ERD
 
-
-
-
+![A2_ERD](https://user-images.githubusercontent.com/113238110/228286987-fcb1722f-9730-4bb6-928b-c432d3e52688.png)
 
 
 #Queries_Output
