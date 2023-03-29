@@ -3,6 +3,9 @@
 
 ![A2_ERD (1)](https://user-images.githubusercontent.com/113238110/228567495-3475b051-e5a6-4c15-9d8f-9a3ec88217de.png)
 
+Explanation:
+In the Erd, Person, Corporation, Hangar, Airplane, and Plane-Type are strong entities. The Airplane is of-type plane type and is linked to the Hangar by the function Stored_In. Person is a generalization and Employee and Pilot are specifications or subclasses. We have an entity of Service linked to Employee by Maintain and Airplane by Plane_Service. Owner can either be a Corporation or a Person.
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Queries_Output
