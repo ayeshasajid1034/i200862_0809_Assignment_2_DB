@@ -10,6 +10,13 @@ In the Erd, Person, Corporation, Hangar, Airplane, and Plane-Type are strong ent
 
 #Relational Data Model
 
+![Relational Data Model](https://user-images.githubusercontent.com/113238110/228615685-16c7a164-d6e5-4119-bbdc-d95011656b97.png)
+
+-------------------------------------------------
+
+![Relational Model_1](https://user-images.githubusercontent.com/113238110/228615710-924da66d-4ff8-4b35-8025-8ed7f4564538.jpg)
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Queries_Output
 
