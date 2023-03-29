@@ -8,7 +8,7 @@
 #Queries_Output
 
 ![Screenshot (97)](https://user-images.githubusercontent.com/113238110/228567855-4a0a90aa-bf65-4937-b7cb-3b14b2d66f1e.png)
-Explanation:This means that all rows from the AIRPLANE table will be included in the result set, and any matching rows from the PLANE_SERVICE table will also be included. If there are no matching rows in the PLANE_SERVICE table, the columns from that table will be NULL in the result set.
+Explanation:*This means that all rows from the AIRPLANE table will be included in the result set, and any matching rows from the PLANE_SERVICE table will also be included. If there are no matching rows in the PLANE_SERVICE table, the columns from that table will be NULL in the result set.*
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query4](https://user-images.githubusercontent.com/113238110/228276738-e54d0625-334e-48cd-acec-cfbb41f88cf5.png)
