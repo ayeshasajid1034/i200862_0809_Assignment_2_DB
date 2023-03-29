@@ -48,6 +48,8 @@ Explanation:The INNER JOIN clauses are used to join the AIRPLANE, PLANE_SERVICE,
 Explanation:he first INNER JOIN clause joins the OWNER_ table with a subquery that selects the registration number of airplanes that have been purchased within the last month. This is done by joining the OWNS table with the subquery using the REG column as the key for joining the two tables, and filtering the results to only include purchases made within the last month using the WHERE clause.
 The LEFT JOIN clauses are used to join the OWNER_ table with the PERSON and CORPORATION tables based on their relationships and owner types. If the owner is a person, their name and phone number are retrieved from the PERSON table using the SSN column as the key for joining the two tables. If the owner is a corporation, their name and phone number are retrieved from the CORPORATION table using the CORP_ID column as the key for joining the two tables. The CASE statements in the SELECT clause are used to select the appropriate name and phone number based on the owner type.
 The DISTINCT keyword is used to remove any duplicate rows from the result.
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -57,6 +59,8 @@ Explanation:The COUNT(DISTINCT MODEL_NO) function is used to count the number of
 The FROM clause specifies the table involved in the query, which are PILOT and FLIES.
 The JOIN clause is used to join the PILOT table with the FLIES table using the LIC_NUM column as the key for joining the two tables. This allows us to retrieve the list of airplanes that each pilot is authorized to fly.
 The GROUP BY clause is used to group the result set by pilot's license number. This means that we will get one row per pilot's license number in the final result set, and the number of authorized airplanes will be calculated for each individual pilot.
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -65,6 +69,8 @@ The GROUP BY clause is used to group the result set by pilot's license number. T
 Explanation:The LEFT JOIN clause is used to join the HANGAR table with the AIRPLANE table using the STORED_IN column as the key for joining the two tables. This allows us to include only those hangars that currently store at least one airplane.
 The ORDER BY clause is used to sort the result set by capacity in descending order. This means that the hangars with the largest capacity will appear at the top of the result set.
 The TOP 1 clause is used to limit the result set to only the first row, which is the largest hangar.
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -74,6 +80,8 @@ Explanation:The first LEFT JOIN clause is used to join the OWNER_ table with the
 The second LEFT JOIN clause is used to join the OWNS table with the OWNER_ table using the OWNER_ID column as the key for joining the two tables. This allows us to count the number of planes owned by each corporation.
 The GROUP BY clause is used to group the result set by CORP_NAME, which allows us to apply the aggregate function COUNT() to each group of corporations.
 The ORDER BY clause is used to sort the result set by the num_planes_owned column in descending order. This means that the corporations with the largest number of planes owned will appear at the top of the result set.
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -83,13 +91,15 @@ Explanation:
 The JOIN clause is used twice to join the AIRPLANE table to the PLANE_SERVICE table and the PLANE_SERVICE table to the SERVICE_ table, respectively.
 The ON clause specifies the join condition between the tables, based on the REG column of the AIRPLANE table and the REG column of the PLANE_SERVICE table, and the S_ID column of the PLANE_SERVICE table and the S_ID column of the SERVICE_ table.
 The GROUP BY clause groups the results by the OF_TYPE column of the AIRPLANE table.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ![Query13](https://user-images.githubusercontent.com/113238110/228276828-b3c582af-a2b4-4dfc-8898-93318c6c3863.png)
 
-Explanation:he SELECT clause selects a distinct list of owner names, based on whether the owner is a person or a corporation. The OwnerName column is created using a CASE statement that checks the OWNER_TYPE column of the OWNER_ table, and if it is 'Person', retrieves the name of the person from the PERSON table, using the OWNER_ID column of the OWNER_ table as the SSN key. If the OWNER_TYPE is 'Corp', it retrieves the corporation name from the CORPORATION table, using the OWNER_ID column of the OWNER_ table as the CORP_ID key.
+Explanation:The SELECT clause selects a distinct list of owner names, based on whether the owner is a person or a corporation. The OwnerName column is created using a CASE statement that checks the OWNER_TYPE column of the OWNER_ table, and if it is 'Person', retrieves the name of the person from the PERSON table, using the OWNER_ID column of the OWNER_ table as the SSN key. If the OWNER_TYPE is 'Corp', it retrieves the corporation name from the CORPORATION table, using the OWNER_ID column of the OWNER_ table as the CORP_ID key.
 The JOIN clause joins multiple tables to retrieve the relevant data.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -98,6 +108,8 @@ The JOIN clause joins multiple tables to retrieve the relevant data.
 Explanation:he SELECT clause selects a distinct list of owner names, based on whether the owner is a person or a corporation. The OwnerName column is created using a CASE statement that checks the OWNER_TYPE column of the OWNER_ table, and if it is 'Person', retrieves the name of the person from the PERSON table, using the OWNER_ID column of the OWNER_ table as the SSN key. If the OWNER_TYPE is 'Corp', it retrieves the corporation name from the CORPORATION table, using the OWNER_ID column of the OWNER_ table as the CORP_ID key.
 The JOIN clause joins multiple tables to retrieve the relevant data.
 The WHERE clause filters the results based on the condition that the employee who maintained the airplane has also worked on a different model of airplane. This is achieved by comparing the MODEL_NO column of the PLANE_TYPE table for the current airplane with the MODEL_NO column of the WORKS_ON table for the employee, and checking that they are not equal.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -105,6 +117,8 @@ The WHERE clause filters the results based on the condition that the employee wh
 
 Explanation:The INNER JOIN clause is used multiple times to join the PERSON, FLIES, and WORKS_ON tables, to retrieve the relevant data based on their common columns. Specifically, the JOIN condition is set to match the pilot's SSN with the person's SSN, the pilot's license number with the flies' license number, and the airplane model number with the works on model number.
 The WHERE clause filters the results based on the condition that the person is a pilot and has flown at least one airplane that they also worked on. This is achieved by checking that the pilot's license number is present in the FLIES table, and that the airplane model number is present in the WORKS_ON table.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -119,6 +133,7 @@ Explanation:The INNER JOIN clause is used multiple times to join the PERSON, MAI
 
 Explanation:The INNER JOIN clause is used to join the AIRPLANE and PLANE_TYPE tables based on the OF_TYPE column, to retrieve the model number for each airplane.
 The LEFT JOIN clause is used multiple times to join the OWNS, EMPLOYEE, MAINTAIN, and SERVICE_ tables, to retrieve information about ownership, employee data, maintenance, and service data for the airplanes.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -126,6 +141,8 @@ The LEFT JOIN clause is used multiple times to join the OWNS, EMPLOYEE, MAINTAIN
 
 Explanation:The WHERE clause filters the results by selecting only individuals as owners and corporations who have owned an airplane of the same type within the last month. This is achieved by comparing the P_DATE column of the OWNS table for the corporation with the current date, and checking if it is within the last month using the DATEADD function.
 The DISTINCT keyword is used to remove any duplicates from the result set.
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query19](https://user-images.githubusercontent.com/113238110/228276873-a82ee815-cee3-4da7-be77-636a5c96111c.png)
@@ -140,6 +157,7 @@ Explanation: This query assumes that there are two tables: Hangars and HangarPla
 Explanation:include all plane models, even if there are no planes for a certain model.
 The GROUP BY clause is used to group the result set by MODEL_NO, which allows us to apply the aggregate function COUNT() to each group of planes based on their model.
 The COUNT(A.Reg) function counts the number of planes for each model based on the number of rows in the Airplane table with a matching OF_TYPE value in the Plane_Type table.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -148,6 +166,7 @@ The COUNT(A.Reg) function counts the number of planes for each model based on th
 Explanation:he LEFT JOIN clause is used to join the Plane_Service table with the Airplane table using the REG column as the key for joining the two tables. This ensures that we include all airplanes, even if an airplane has no services performed.
 The GROUP BY clause is used to group the result set by Reg, which allows us to apply the aggregate function COUNT() to each group of services based on their airplane registration number.
 The COUNT(PS.PS_ID) function counts the number of services performed on each airplane based on the number of rows in the Plane_Service table with a matching REG value in the Airplane table.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
