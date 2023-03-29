@@ -1,7 +1,7 @@
 # i200862_0809_Assignment_2_DB
 #ERD
 
-![Screenshot (96)](https://user-images.githubusercontent.com/113238110/228564905-6a59a418-1038-465d-8d60-cfa1e9e449bb.png)
+![A2_ERD (1)](https://user-images.githubusercontent.com/113238110/228567495-3475b051-e5a6-4c15-9d8f-9a3ec88217de.png)
 
 
 
@@ -57,6 +57,7 @@ This query can be extended to see how popular each type is
 Explanation:Names of Employees who are not allowed to work on the plane of a specific model.
 User might be interested to find details about employees who cannot work on the plane of specific model.
 
+![Screenshot (96)](https://user-images.githubusercontent.com/113238110/228564905-6a59a418-1038-465d-8d60-cfa1e9e449bb.png)
 Write the names of all the pilots who have flown airplanes in the last month 
 User might be interested in seeing all the pilots who were active the last month 
 
