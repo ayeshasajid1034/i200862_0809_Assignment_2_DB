@@ -7,6 +7,7 @@
 
 #Queries_Output
 
+![Screenshot (97)](https://user-images.githubusercontent.com/113238110/228567855-4a0a90aa-bf65-4937-b7cb-3b14b2d66f1e.png)
 ![Query4](https://user-images.githubusercontent.com/113238110/228276738-e54d0625-334e-48cd-acec-cfbb41f88cf5.png)
 ![Query5](https://user-images.githubusercontent.com/113238110/228276756-bc2ef2be-6e38-4793-9ff4-3bb109acb4fe.png)
 ![Query6](https://user-images.githubusercontent.com/113238110/228276769-06c4cf72-d7f5-4660-93ec-bea8e8c31a4d.png)
