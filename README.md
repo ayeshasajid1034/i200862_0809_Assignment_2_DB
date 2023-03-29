@@ -62,13 +62,47 @@ The ORDER BY clause is used to sort the result set by the num_planes_owned colum
 
 
 ![Query12](https://user-images.githubusercontent.com/113238110/228276822-8a8dd6b9-d022-415a-b1c3-18ad290211af.png)
+Explanation:
+The JOIN clause is used twice to join the AIRPLANE table to the PLANE_SERVICE table and the PLANE_SERVICE table to the SERVICE_ table, respectively.
+The ON clause specifies the join condition between the tables, based on the REG column of the AIRPLANE table and the REG column of the PLANE_SERVICE table, and the S_ID column of the PLANE_SERVICE table and the S_ID column of the SERVICE_ table.
+The GROUP BY clause groups the results by the OF_TYPE column of the AIRPLANE table.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query13](https://user-images.githubusercontent.com/113238110/228276828-b3c582af-a2b4-4dfc-8898-93318c6c3863.png)
+Explanation:he SELECT clause selects a distinct list of owner names, based on whether the owner is a person or a corporation. The OwnerName column is created using a CASE statement that checks the OWNER_TYPE column of the OWNER_ table, and if it is 'Person', retrieves the name of the person from the PERSON table, using the OWNER_ID column of the OWNER_ table as the SSN key. If the OWNER_TYPE is 'Corp', it retrieves the corporation name from the CORPORATION table, using the OWNER_ID column of the OWNER_ table as the CORP_ID key.
+The JOIN clause joins multiple tables to retrieve the relevant data.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query14](https://user-images.githubusercontent.com/113238110/228276838-60b5d887-fc4d-4a90-a3de-1bc53db5ccca.png)
+Explanation:he SELECT clause selects a distinct list of owner names, based on whether the owner is a person or a corporation. The OwnerName column is created using a CASE statement that checks the OWNER_TYPE column of the OWNER_ table, and if it is 'Person', retrieves the name of the person from the PERSON table, using the OWNER_ID column of the OWNER_ table as the SSN key. If the OWNER_TYPE is 'Corp', it retrieves the corporation name from the CORPORATION table, using the OWNER_ID column of the OWNER_ table as the CORP_ID key.
+The JOIN clause joins multiple tables to retrieve the relevant data.
+The WHERE clause filters the results based on the condition that the employee who maintained the airplane has also worked on a different model of airplane. This is achieved by comparing the MODEL_NO column of the PLANE_TYPE table for the current airplane with the MODEL_NO column of the WORKS_ON table for the employee, and checking that they are not equal.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query15](https://user-images.githubusercontent.com/113238110/228276847-531d3c8e-5489-4af0-98b9-76c5ec7098ec.png)
+Explanation:The INNER JOIN clause is used multiple times to join the PERSON, FLIES, and WORKS_ON tables, to retrieve the relevant data based on their common columns. Specifically, the JOIN condition is set to match the pilot's SSN with the person's SSN, the pilot's license number with the flies' license number, and the airplane model number with the works on model number.
+The WHERE clause filters the results based on the condition that the person is a pilot and has flown at least one airplane that they also worked on. This is achieved by checking that the pilot's license number is present in the FLIES table, and that the airplane model number is present in the WORKS_ON table.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query16](https://user-images.githubusercontent.com/113238110/228276853-f855faf3-d6fd-4341-9182-5cf1b3377b21.png)
+Explanation:The INNER JOIN clause is used multiple times to join the PERSON, MAINTAIN, PLANE_SERVICE, SERVICE_, AIRPLANE, OWNS, and CORPORATION tables, to retrieve the relevant data based on their common columns. Specifically, the JOIN condition is set to match the employee's SSN with the person's SSN, the maintenance SSN with the employee's SSN, the maintenance service ID with the plane service ID, the plane service registration with the airplane registration, the airplane registration with the owner registration, and the owner ID with the corporation ID.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query17](https://user-images.githubusercontent.com/113238110/228276861-38507dcc-ca10-4e19-840d-333169c4835c.png)
+Explanation:The INNER JOIN clause is used to join the AIRPLANE and PLANE_TYPE tables based on the OF_TYPE column, to retrieve the model number for each airplane.
+The LEFT JOIN clause is used multiple times to join the OWNS, EMPLOYEE, MAINTAIN, and SERVICE_ tables, to retrieve information about ownership, employee data, maintenance, and service data for the airplanes.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ![Query18](https://user-images.githubusercontent.com/113238110/228276864-86fe6a2f-736e-4011-a161-82b7e6d75808.png)
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Explanation:The WHERE clause filters the results by selecting only individuals as owners and corporations who have owned an airplane of the same type within the last month. This is achieved by comparing the P_DATE column of the OWNS table for the corporation with the current date, and checking if it is within the last month using the DATEADD function.
+The DISTINCT keyword is used to remove any duplicates from the result set.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query19](https://user-images.githubusercontent.com/113238110/228276873-a82ee815-cee3-4da7-be77-636a5c96111c.png)
 Explanation: This query assumes that there are two tables: Hangars and HangarPlanes. The Hangars table contains information about each hangar, including a unique HangarID and the HangarName. The HangarPlanes table is a many-to-many join table that links planes to their respective hangars. It has two columns: PlaneID and HangarID. This query uses a LEFT JOIN to include all hangars, even if they don't have any planes stored in them yet. The COUNT function is used to count the number of planes for each hangar, and the GROUP BY clause groups the results by hangar number. The resulting output will show the number of planes stored in each hangar, including hangars with 0 planes.
@@ -82,6 +116,9 @@ The COUNT(A.Reg) function counts the number of planes for each model based on th
 
 
 ![Query21](https://user-images.githubusercontent.com/113238110/228276889-ed2e411a-409b-41ec-b762-054814a0b792.png)
+Explanation:he LEFT JOIN clause is used to join the Plane_Service table with the Airplane table using the REG column as the key for joining the two tables. This ensures that we include all airplanes, even if an airplane has no services performed.
+The GROUP BY clause is used to group the result set by Reg, which allows us to apply the aggregate function COUNT() to each group of services based on their airplane registration number.
+The COUNT(PS.PS_ID) function counts the number of services performed on each airplane based on the number of rows in the Plane_Service table with a matching REG value in the Airplane table.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -117,7 +154,7 @@ User might be interested to find details about employees who cannot work on the 
 Write the names of all the pilots who have flown airplanes in the last month 
 User might be interested in seeing all the pilots who were active the last month 
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
