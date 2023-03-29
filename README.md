@@ -8,26 +8,38 @@
 #Queries_Output
 
 ![Screenshot (97)](https://user-images.githubusercontent.com/113238110/228567855-4a0a90aa-bf65-4937-b7cb-3b14b2d66f1e.png)
-Explanation:*This means that all rows from the AIRPLANE table will be included in the result set, and any matching rows from the PLANE_SERVICE table will also be included. If there are no matching rows in the PLANE_SERVICE table, the columns from that table will be NULL in the result set.*
+
+Explanation:This means that all rows from the AIRPLANE table will be included in the result set, and any matching rows from the PLANE_SERVICE table will also be included. If there are no matching rows in the PLANE_SERVICE table, the columns from that table will be NULL in the result set.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query4](https://user-images.githubusercontent.com/113238110/228276738-e54d0625-334e-48cd-acec-cfbb41f88cf5.png)
+
 Explanation:The INNER JOIN clauses are used to join these tables together based on their relationships, using the Reg and OWNER_ID columns as the keys for joining the AIRPLANE and OWNS tables, and the OF_TYPE and MODEL_NO columns as the keys for joining the AIRPLANE and PLANE_TYPE tables.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query5](https://user-images.githubusercontent.com/113238110/228276756-bc2ef2be-6e38-4793-9ff4-3bb109acb4fe.png)
+
 Explanation:The SELECT statement calculates the average salary of employees who work the night shift and renames the result column as avg_night_shift_salary.
 The AVG function is used to calculate the average salary of the selected employees.
 The FROM clause specifies the table involved in the query, which is EMPLOYEE.
 The WHERE clause is used to filter the results to only include employees who work the night shift, which is defined as employees whose SHIFT_ column is greater than or equal to 22:00:00 (10:00 PM) or less than or equal to 06:00:00 (6:00 AM).
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query6](https://user-images.githubusercontent.com/113238110/228276769-06c4cf72-d7f5-4660-93ec-bea8e8c31a4d.png)
+
 Explanation:The INNER JOIN clauses are used to join these tables together based on their relationships, using the SSN column as the key for joining the EMPLOYEE and MAINTAIN tables, and the S_ID column as the key for joining the MAINTAIN and SERVICE_ tables.
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Query7](https://user-images.githubusercontent.com/113238110/228276777-e6f901cb-9166-4aae-b2e1-64a0ba6002eb.png)
+
 Explanation:The INNER JOIN clauses are used to join the AIRPLANE, PLANE_SERVICE, and SERVICE_ tables together based on their relationships, using the REG column as the key for joining the AIRPLANE and PLANE_SERVICE tables, and the S_ID column as the key for joining the PLANE_SERVICE and SERVICE_ tables.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
