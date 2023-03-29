@@ -392,11 +392,6 @@ VALUES
 /* Write a SQL query to find the registration numbers of airplanes that have never
 undergone maintenance. */
 
-SELECT AIRPLANE.Reg
-FROM AIRPLANE
-LEFT JOIN MAINTAIN
-ON AIRPLANE.Reg = MAINTAIN.SSN
-WHERE MAINTAIN.SSN IS NULL;
 
 SELECT AIRPLANE.Reg
 FROM AIRPLANE
