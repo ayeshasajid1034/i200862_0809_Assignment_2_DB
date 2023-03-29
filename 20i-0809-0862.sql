@@ -452,7 +452,6 @@ WHERE SERVICE_.DATE >= DATEADD(day, -7, GETDATE());
 /*Write a SQL query to find the names and phone numbers of all owners who have
 purchased a plane in the past month. */
 
-
 SELECT DISTINCT
   CASE
     WHEN OWNER_TYPE = 'Person' THEN PERSON.NAME_
@@ -470,7 +469,6 @@ INNER JOIN (
 ) p ON REG = p.REG
 LEFT JOIN PERSON  ON OWNER_ID = SSN AND OWNER_TYPE = 'Person'
 LEFT JOIN CORPORATION ON OWNER_ID = CORPORATION.CORP_ID AND OWNER_TYPE = 'Corp';
-
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -560,8 +558,6 @@ WHERE CORPORATION.CORP_NAME IN (
     WHERE ow2.OWNER_ID = OWNS.OWNER_ID
 )
 
---no result
-
 ----------------------------------------------------------------------------------------------------------------------------------
 --QUERY 15
 /*Write a SQL query to find the names of pilots who are qualified to fly a plane that is
@@ -591,7 +587,6 @@ WHERE CORPORATION.CORP_NAME = 'Corporation 2'
 GROUP BY PERSON.NAME_
 ORDER BY TOTAL_HOURS DESC;
 
---no result
 -----------------------------------------------------------------------------------------------------------------------
 --QUERY 17
 /*Write a SQL query to find the names and registration numbers of airplanes that have
@@ -725,7 +720,6 @@ INNER JOIN PLANE_SERVICE ON AIRPLANE.Reg = PLANE_SERVICE.REG
 INNER JOIN SERVICE_ ON PLANE_SERVICE.S_ID = SERVICE_.S_ID
 WHERE SERVICE_.DATE >= DATEADD(month, -1, GETDATE());
 
---no result
 
 /* Write all information about an owner who have purchase an airplane of a specific type*/
 /*User might be interested in seeing the information about owners who have a preference for a specific type. 
