@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2C3E50;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>[Your Name]</h1>
+        <p>[Your Address] | [City, State, Zip Code] | [Your Phone Number] | [Your Email Address] | <a href="[LinkedIn URL]">LinkedIn Profile</a> | <a href="[Portfolio URL]">Portfolio</a></p>
+
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Highly motivated and detail-oriented Biology graduate with hands-on laboratory expertise and a strong foundation in biological sciences. Experienced in conducting experiments, analyzing data, and maintaining lab equipment. Passionate about advancing knowledge in the biological field through research and practical applications.</p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="content">
+                <h3>Bachelor of Science in Biology</h3>
+                <p>Islamic University | Graduated: [Year]</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="content">
+                <h3>Laboratory Technician</h3>
+                <p>[Laboratory Name], [City, State] | [Dates of Employment]</p>
+                <ul>
+                    <li>Conducted experiments in molecular biology, microbiology, and genetics, following standardized lab protocols.</li>
+                    <li>Maintained lab equipment, prepared samples, and recorded data for research accuracy.</li>
+                    <li>Assisted senior researchers with data analysis and documentation for publication.</li>
+                </ul>
+
+                <h3>Research Assistant (Biology)</h3>
+                <p>[Research Institution], [City, State] | [Dates of Employment]</p>
+                <ul>
+                    <li>Contributed to research projects focused on cellular biology, completing tasks from sample preparation to analysis.</li>
+                    <li>Collaborated with team members to design and implement laboratory experiments.</li>
+                    <li>Documented research findings and contributed to weekly presentations on progress and results.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Laboratory Techniques: PCR, DNA extraction, gel electrophoresis, spectrophotometry.</li>
+                <li>Data Analysis: Proficient in using scientific software for data visualization and statistical analysis.</li>
+                <li>Technical Writing: Experienced in documenting lab results, creating research reports, and maintaining lab notes.</li>
+                <li>Team Collaboration: Effective communication and coordination in lab and research environments.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
